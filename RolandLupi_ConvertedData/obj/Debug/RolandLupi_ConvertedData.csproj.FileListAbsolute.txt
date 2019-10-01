@@ -1,0 +1,18 @@
+Z:\Desktop\Project & Portfolio 2\database data to JSON\RolandLupi_ConvertedData\bin\Debug\RolandLupi_ConvertedData.exe.config
+Z:\Desktop\Project & Portfolio 2\database data to JSON\RolandLupi_ConvertedData\bin\Debug\RolandLupi_ConvertedData.exe
+Z:\Desktop\Project & Portfolio 2\database data to JSON\RolandLupi_ConvertedData\bin\Debug\RolandLupi_ConvertedData.pdb
+Z:\Desktop\Project & Portfolio 2\database data to JSON\RolandLupi_ConvertedData\obj\Debug\RolandLupi_ConvertedData.csprojAssemblyReference.cache
+Z:\Desktop\Project & Portfolio 2\database data to JSON\RolandLupi_ConvertedData\obj\Debug\RolandLupi_ConvertedData.csproj.CoreCompileInputs.cache
+Z:\Desktop\Project & Portfolio 2\database data to JSON\RolandLupi_ConvertedData\obj\Debug\RolandLupi_ConvertedData.exe
+Z:\Desktop\Project & Portfolio 2\database data to JSON\RolandLupi_ConvertedData\obj\Debug\RolandLupi_ConvertedData.pdb
+Z:\Desktop\Project & Portfolio 2\database data to JSON\RolandLupi_ConvertedData\bin\Debug\MySql.Data.dll
+Z:\Desktop\Project & Portfolio 2\database data to JSON\RolandLupi_ConvertedData\obj\Debug\RolandLupi_ConvertedData.csproj.CopyComplete
+\\vmware-host\Shared Folders\Desktop\Project & Portfolio 2\database data to JSON\RolandLupi_ConvertedData\bin\Debug\RolandLupi_ConvertedData.exe.config
+\\vmware-host\Shared Folders\Desktop\Project & Portfolio 2\database data to JSON\RolandLupi_ConvertedData\bin\Debug\RolandLupi_ConvertedData.exe
+\\vmware-host\Shared Folders\Desktop\Project & Portfolio 2\database data to JSON\RolandLupi_ConvertedData\bin\Debug\RolandLupi_ConvertedData.pdb
+\\vmware-host\Shared Folders\Desktop\Project & Portfolio 2\database data to JSON\RolandLupi_ConvertedData\bin\Debug\MySql.Data.dll
+\\vmware-host\Shared Folders\Desktop\Project & Portfolio 2\database data to JSON\RolandLupi_ConvertedData\obj\Debug\RolandLupi_ConvertedData.csprojAssemblyReference.cache
+\\vmware-host\Shared Folders\Desktop\Project & Portfolio 2\database data to JSON\RolandLupi_ConvertedData\obj\Debug\RolandLupi_ConvertedData.csproj.CoreCompileInputs.cache
+\\vmware-host\Shared Folders\Desktop\Project & Portfolio 2\database data to JSON\RolandLupi_ConvertedData\obj\Debug\RolandLupi_ConvertedData.csproj.CopyComplete
+\\vmware-host\Shared Folders\Desktop\Project & Portfolio 2\database data to JSON\RolandLupi_ConvertedData\obj\Debug\RolandLupi_ConvertedData.exe
+\\vmware-host\Shared Folders\Desktop\Project & Portfolio 2\database data to JSON\RolandLupi_ConvertedData\obj\Debug\RolandLupi_ConvertedData.pdb
