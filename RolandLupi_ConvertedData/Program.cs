@@ -115,6 +115,7 @@ namespace RolandLupi_ConvertedData
                 {
                     //store data from database as a property of the restaurant object
                     restaurants.Add(new Restaurant(reader["id"].ToString(), reader["RestaurantName"].ToString(), reader["Address"].ToString(), reader["Phone"].ToString(), reader["HoursOfOperation"].ToString(), reader["Price"].ToString(), reader["USACityLocation"].ToString(), reader["Cuisine"].ToString(), reader["FoodRating"].ToString(), reader["ServiceRating"].ToString(), reader["AmbienceRating"].ToString(), reader["ValueRating"].ToString(), reader["OverallRating"].ToString(), reader["OverallPossibleRating"].ToString()));
+
                 }
 
                 using (StreamWriter file = new StreamWriter(@"Z:\Desktop\Project & Portfolio 2\LupiRoland_ConvertedData.JSON")) //use streamwrite class to save following to a .JSON file at location of my choosing

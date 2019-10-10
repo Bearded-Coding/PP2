@@ -45,27 +45,84 @@ namespace LupiRoland_FiveStarRating
                 {
                     case 1:
                         {
-                            
+                            ConnectToSQL("SELECT RestaurantName, OverallRating FROM RestaurantProfiles ORDER BY RestaurantName ASC;"); //query
                         }
                         break;
                     case 2:
                         {
-
+                            ConnectToSQL("SELECT RestaurantName, OverallRating FROM RestaurantProfiles ORDER BY RestaurantName DESC;"); //query
                         }
                         break;
                     case 3:
                         {
-
+                            ConnectToSQL("SELECT RestaurantName, OverallRating FROM RestaurantProfiles ORDER BY OverallRating DESC;"); //query
                         }
                         break;
                     case 4:
                         {
-
+                            ConnectToSQL("SELECT RestaurantName, OverallRating FROM RestaurantProfiles ORDER BY OverallRating ASC;"); //query
                         }
                         break;
                     case 5:
                         {
+                            Console.Write( //sub menu
+                            "\n\t\t\t\t\tHello User, How Would You Like To Sort The Data?" +
+                            "\n\n\n" +
+                            "\t\t\t\t[1] Show The Best" +
+                            "\n\n" +
+                            "\t\t\t\t[2] Show 4 Stars And Up" +
+                            "\n\n" +
+                            "\t\t\t\t[3] Show 3 Stars And Up" +
+                            "\n\n" +
+                            "\t\t\t\t[4] Show The Worst" +
+                            "\n\n" +
+                            "\t\t\t\t[5] Show Unrated" +
+                            "\n\n" +
+                            "\t\t\t\t[6] Back" +
+                            "\n\n\n" +
+                            "\t\t\t\tChoice: "
+                            );
 
+                            int userChoice = Validation.GetInt(1, 6); //validation with range limit
+
+                            switch (userChoice) //switch case for user input
+                            {
+                                case 1:
+                                    {
+                                        ConnectToSQL("SELECT RestaurantName, OverallRating FROM RestaurantProfiles WHERE OverallRating >= '4.50';");
+                                    }
+                                    break;
+                                case 2:
+                                    {
+                                        ConnectToSQL("SELECT RestaurantName, OverallRating FROM RestaurantProfiles WHERE OverallRating >= '3.50';");
+
+                                    }
+                                    break;
+                                case 3:
+                                    {
+                                        ConnectToSQL("SELECT RestaurantName, OverallRating FROM RestaurantProfiles WHERE OverallRating >= '2.50';");
+
+                                    }
+                                    break;
+                                case 4:
+                                    {
+                                        ConnectToSQL("SELECT RestaurantName, OverallRating FROM RestaurantProfiles WHERE OverallRating >= '.50';");
+
+                                    }
+                                    break;
+                                case 5:
+                                    {
+                                        ConnectToSQL("SELECT RestaurantName, OverallRating FROM RestaurantProfiles WHERE OverallRating <= '0.49' OR OverallRating IS NULL;");
+
+                                    }
+                                    break;
+                                default:
+                                    {
+                                        
+                                    }
+                                    break;
+                                    
+                            }
                         }
                         break;
                     case 6:
@@ -81,7 +138,7 @@ namespace LupiRoland_FiveStarRating
         public static void ConnectToSQL(string query)
         {
             // MySQL Database Connection String
-            string cs = @"server=10.0.0.124;userid=root;password=root;database=SampleRestaurant;port=8889";
+            string cs = @"server=10.0.0.126;userid=root;password=root;database=SampleRestaurant;port=8889";
 
             // Declare a MySQL Connection
             MySqlConnection conn = null;
@@ -106,42 +163,73 @@ namespace LupiRoland_FiveStarRating
                 // Output Results
                 MySqlDataReader reader = cmd.ExecuteReader();
 
-                //List<Restaurant> restaurants = new List<Restaurant> { }; //create list of restaurant objects to store data
+                List<StarRating> ratings = new List<StarRating> { }; //create list of starRating objects to store data
 
-                //while (reader.Read()) //while the reader is reading ... do this
-                //{
-                //    //store data from database as a property of the restaurant object
-                //    restaurants.Add(new Restaurant(reader["id"].ToString(), reader["RestaurantName"].ToString(), reader["Address"].ToString(), reader["Phone"].ToString(), reader["HoursOfOperation"].ToString(), reader["Price"].ToString(), reader["USACityLocation"].ToString(), reader["Cuisine"].ToString(), reader["FoodRating"].ToString(), reader["ServiceRating"].ToString(), reader["AmbienceRating"].ToString(), reader["ValueRating"].ToString(), reader["OverallRating"].ToString(), reader["OverallPossibleRating"].ToString()));
-                //}
+                int overallRating = 0;
+                string starCharacter = " ";
 
-                //using (StreamWriter file = new StreamWriter(@"Z:\Desktop\Project & Portfolio 2\LupiRoland_ConvertedData.JSON")) //use streamwrite class to save following to a .JSON file at location of my choosing
-                //{
+                while (reader.Read()) //while the reader is reading ... do this
+                {
+                    if (reader["OverallRating"].ToString() == "") //if any ratings are null convert them to ints of 0
+                    {
+                        overallRating = 0;
+                    }
+                    else
+                    {
+                        overallRating = Convert.ToInt32(Convert.ToDecimal(reader["OverallRating"].ToString())); //convert the string object, to string, to decimal then to int 
 
-                //    file.Write("[");
-                //    foreach (Restaurant restaurant in restaurants) //foreach restaurant object in the list of objects
-                //    {
+                    }
 
-                //        file.WriteLine(restaurant.ToString()); //write out its contents 
-
-                //        if (restaurant != restaurants[restaurants.Count - 1]) //check to see if the object is the last object in the database
-                //        {
-                //            //if it is then add comma
-                //            file.Write(",");
-                //        }
-                //    }
-                //    file.Write("]");
-
-                //}
+                    if (overallRating == 0) { starCharacter = "Not Rated"; }
+                    if (overallRating == 1) { starCharacter = "*"; }
+                    if (overallRating == 2) { starCharacter = "**"; }
+                    if (overallRating == 3) { starCharacter = "***"; }
+                    if (overallRating == 4) { starCharacter = "****"; }
+                    if (overallRating == 5) { starCharacter = "*****"; }
 
 
+                    if (overallRating <= 2)
+                    {
+                        
+                        Console.Write($"Restaurant: {reader["RestaurantName"].ToString().PadRight(50)}"); //reader only reads what the query tells it to read since layout is similar on all queries one writeline will suffice
+                        Console.ForegroundColor = ConsoleColor.Red;
+                        Console.Write($"OverallRating: {starCharacter}\n"); //reader only reads what the query tells it to read since layout is similar on all queries one writeline will suffice
+                        Console.ForegroundColor = ConsoleColor.White;
 
+                    }
+                    if (overallRating == 3)
+                    {
+                        Console.Write($"Restaurant: {reader["RestaurantName"].ToString().PadRight(50)}"); //reader only reads what the query tells it to read since layout is similar on all queries one writeline will suffice
+                        Console.ForegroundColor = ConsoleColor.Yellow;
+                        Console.Write($"OverallRating: {starCharacter}\n"); //reader only reads what the query tells it to read since layout is similar on all queries one writeline will suffice
+                        Console.ForegroundColor = ConsoleColor.White;
+
+
+                    }
+                    if (overallRating >= 4)
+                    {
+                        Console.Write($"Restaurant: {reader["RestaurantName"].ToString().PadRight(50)}"); //reader only reads what the query tells it to read since layout is similar on all queries one writeline will suffice
+                        Console.ForegroundColor = ConsoleColor.Green;
+                        Console.Write($"OverallRating: {starCharacter}\n"); //reader only reads what the query tells it to read since layout is similar on all queries one writeline will suffice
+                        Console.ForegroundColor = ConsoleColor.White;
+
+
+                    }
+
+
+
+
+                }
+                Console.Write("\n\n\nPress Enter To Go Back: ");
+                Console.ReadLine();
+                
             }
-            catch (MySqlException ex)
+            catch (MySqlException ex) //if error occurs, print error
             {
                 Console.WriteLine("Error: {0}", ex.ToString());
                 Console.ReadLine();
             }
-            finally
+            finally //close connection after action is complete
             {
                 if (conn != null)
                 {
@@ -151,4 +239,6 @@ namespace LupiRoland_FiveStarRating
 
         }
     }
+
+  
 }
