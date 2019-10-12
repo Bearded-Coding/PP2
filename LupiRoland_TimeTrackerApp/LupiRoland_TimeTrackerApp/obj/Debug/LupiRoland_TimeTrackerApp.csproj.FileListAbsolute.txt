@@ -5,3 +5,5 @@ Z:\Desktop\Project & Portfolio 2\LupiRoland_TimeTrackerApp\LupiRoland_TimeTracke
 Z:\Desktop\Project & Portfolio 2\LupiRoland_TimeTrackerApp\LupiRoland_TimeTrackerApp\obj\Debug\LupiRoland_TimeTrackerApp.csproj.CoreCompileInputs.cache
 Z:\Desktop\Project & Portfolio 2\LupiRoland_TimeTrackerApp\LupiRoland_TimeTrackerApp\obj\Debug\LupiRoland_TimeTrackerApp.exe
 Z:\Desktop\Project & Portfolio 2\LupiRoland_TimeTrackerApp\LupiRoland_TimeTrackerApp\obj\Debug\LupiRoland_TimeTrackerApp.pdb
+Z:\Desktop\Project & Portfolio 2\LupiRoland_TimeTrackerApp\LupiRoland_TimeTrackerApp\bin\Debug\MySql.Data.dll
+Z:\Desktop\Project & Portfolio 2\LupiRoland_TimeTrackerApp\LupiRoland_TimeTrackerApp\obj\Debug\LupiRoland_TimeTrackerApp.csproj.CopyComplete
